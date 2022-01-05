@@ -1,11 +1,6 @@
--- phpMyAdmin SQL Dump
--- version 4.6.6deb4+deb9u1
--- https://www.phpmyadmin.net/
---
+
 -- Servidor: localhost:3306
--- Tiempo de generación: 13-12-2020 a las 11:04:54
--- Versión del servidor: 10.1.23-MariaDB-9+deb9u1
--- Versión de PHP: 7.0.33-0+deb9u8
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
