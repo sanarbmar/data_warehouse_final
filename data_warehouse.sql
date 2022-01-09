@@ -8,7 +8,10 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `data_warehouse`
 --
-
+DROP TABLE IF EXISTS contactos;
+DROP TABLE IF EXISTS companias;
+DROP TABLE IF EXISTS paises;
+DROP TABLE IF EXISTS usuarios;
 -- --------------------------------------------------------
 
 --
@@ -28,6 +31,7 @@ CREATE TABLE `contactos` (
   `canal_preferido` text COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+
 --
 -- Volcado de datos para la tabla `contactos`
 --
@@ -42,6 +46,35 @@ INSERT INTO `contactos` (`id`, `nombre`, `apellido`, `email`, `telefono`, `pais`
 (37, 'Williams', 'Morris', 'wili@mor', '56156156156', 'Anguilla', 'America', 'Cigarreta', 'Pastelero', 'Whatsapp');
 
 -- --------------------------------------------------------
+--
+
+-- --------------------------------------------------------
+
+-
+-- Estructura de tabla para la tabla `companias`
+--
+
+CREATE TABLE `companias` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `email` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` text COLLATE utf8_spanish_ci NOT NULL,
+  `pais` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `region` varchar(20) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+--
+-- Volcado de datos para la tabla `companias`
+--
+
+INSERT INTO `companias` (`id`, `nombre`, `direccion`, `email`, `telefono`, `pais`, `region`) VALUES
+(1, 'globant', 'calle 4', 'glb@gmail.com', '23432343', 'Colombia', 'America'),
+(1, 'endava', 'calle 8', 'end@gmail.com', '23434343', 'Colombia', 'America'),
+(1, 'ruta n', 'calle 3', 'rn@gmail.com', '565434343', 'Colombia', 'America'),
+(1, 'mercado libre', 'calle 3', 'mlj@gmail.com', '553432232', 'Colombia', 'America');
+
 
 --
 -- Estructura de tabla para la tabla `paises`
@@ -352,6 +385,13 @@ ALTER TABLE `contactos`
   ADD PRIMARY KEY (`id`);
 
 --
+--
+-- Indices de la tabla `companias`
+--
+ALTER TABLE `companias`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `paises`
 --
 ALTER TABLE `paises`
@@ -371,6 +411,10 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `contactos`
 --
 ALTER TABLE `contactos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+--
+--
+ALTER TABLE `companias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT de la tabla `paises`

@@ -5,7 +5,7 @@ const conn =
 {
     DATABASE: 'data_warehouse',
     DIALECT: 'mysql',
-    HOST: '192.168.1.11',
+    HOST: '127.0.0.1',
     PASSWORD: 'Acamica123',
     USERNAME: 'acamica'
 }

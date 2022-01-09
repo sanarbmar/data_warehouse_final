@@ -10,7 +10,10 @@ app.use(expressJwt({ secret: firma, algorithms: ["HS512"] })
 	.unless({
 		path: [{ url: '/v1/ingreso', methods: ['POST'] },
 		{ url: '/v1/usuarios', methods: ['POST'] },
-		{ url: '/v1/paises', methods: ['GET'] }]
+		{ url: '/v1/paises', methods: ['GET'] },
+		{ url: '/v1/companias', methods: ['PUT'] },
+		{ url: '/v1/companias', methods: ['GET'] },
+		{ url: '/v1/companias', methods: ['POST'] }]
 	})
 );
 
@@ -26,11 +29,13 @@ app.use(function (err, req, res, next) {
 const usuariosRutas = require('./rutas/usuarios.rutas.js');
 const contactosRutas = require('./rutas/contactos.rutas.js');
 const paisesRutas = require('./rutas/paises.rutas.js');
+const companiasRutas = require('./rutas/companias.rutas.js');
 
 
 usuariosRutas(app);
 contactosRutas(app);
 paisesRutas(app);
+companiasRutas(app);
 
 app.listen(puerto, () => {
     console.clear();

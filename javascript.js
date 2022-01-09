@@ -14,6 +14,10 @@ const btnCrearUsuario = document.querySelector(".btnCrearUsuario");
 const btnEditarUsuario = document.querySelector(".btnEditarUsuario");
 
 
+const btnBuscarCompania = document.querySelector(".btnBuscarCompania");
+const btnCrearCompania = document.querySelector(".btnCrearCompania");
+const btnEditarCompania = document.querySelector(".btnEditarCompania");
+
 const url = 'http://127.0.0.1:3001';
 
 const fetcheo = async (url, ext, cuerpo, metodo) => {
